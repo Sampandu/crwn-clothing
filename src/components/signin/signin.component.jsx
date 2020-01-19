@@ -20,7 +20,7 @@ class Signin extends Component {
 
     const { email, password } = this.state;
     try {
-      await auth.signInWithEmailAndPassword({ email, password });
+      await auth.signInWithEmailAndPassword(email, password);
       this.setState({ email: '', password: '' });
     } catch (error) {
       console.error('error signing in', error.message);
@@ -37,7 +37,7 @@ class Signin extends Component {
       <div className="sign-in">
         <h2 className="title">I already have an account</h2>
         <span>Sign in with your email and password</span>
-        <form onSubmit={this.handSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <FormInput
             name="email"
             type="email"
